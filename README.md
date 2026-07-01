@@ -124,7 +124,8 @@ https://spur-ai-chat-backend-nsin.onrender.com
 ```
 
 ---
-
+## NOTE
+I also wanted to mention that the OpenAI integration is fully implemented. At the moment, the deployed application is returning the fallback response because the API account has exhausted its available quota, and I'm currently resolving a payment issue with my card to restore access. Once that's resolved, the deployed application will use the live OpenAI responses without any code changes.
 ## Author
 
 Pratyush
