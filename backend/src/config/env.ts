@@ -7,24 +7,13 @@ const requiredVariables = [
 ];
 
 for (const variable of requiredVariables) {
-
     if (!process.env[variable]) {
-
-        throw new Error(
-            `Missing environment variable: ${variable}`
-        );
-
+        throw new Error(`Missing environment variable: ${variable}`);
     }
-
 }
 
 export const env = {
-
-    PORT: process.env.PORT || "3000",
-
+    PORT: Number(process.env.PORT) || 3000,
     DATABASE_URL: process.env.DATABASE_URL!,
-
-    OPENAI_API_KEY:
-        process.env.OPENAI_API_KEY || "",
-
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY || "",
 };
