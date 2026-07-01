@@ -7,9 +7,17 @@ export async function getHistory(
 ) {
     try {
 
-        const { sessionId } = req.params;
+        const sessionId = Array.isArray(req.params.sessionId)
+    ? req.params.sessionId[0]
+    : req.params.sessionId;
 
-        const history = await getConversationHistory(sessionId);
+if (!sessionId) {
+    return res.status(400).json({
+        error: "sessionId is required",
+    });
+}
+
+const history = await getConversationHistory(sessionId);
 
         return res.status(200).json(history);
 
