@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api/chat";
+const API_BASE_URL = "https://spur-ai-chat-backend-nsin.onrender.com/api/chat";
 
 export type Message = {
     role: "USER" | "ASSISTANT";
