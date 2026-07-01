@@ -1,101 +1,73 @@
 # Spur AI Chat Assistant
 
-A full-stack AI chat application built as part of the Spur AI Backend Engineer Assignment.
-
-## Features
-
-- AI-powered chat assistant
-- Conversation history persistence
-- Session-based conversations
-- PostgreSQL database
-- Prisma ORM
-- Express + TypeScript backend
-- React + Vite frontend
-- OpenAI integration
-- Input validation using Zod
-- Repository-Service architecture
+A full-stack AI-powered chat application built using React, Express, TypeScript, Prisma, PostgreSQL (Neon), and OpenAI.
 
 ---
 
-# Tech Stack
+## Features
 
-## Frontend
+- AI Chat Interface
+- Conversation History
+- Persistent Storage using PostgreSQL
+- REST API
+- Responsive UI
+- Cloud Deployment
+
+---
+
+## Tech Stack
+
+### Frontend
 
 - React
 - TypeScript
 - Vite
 
-## Backend
+### Backend
 
 - Node.js
 - Express
-- TypeScript
 - Prisma ORM
-- PostgreSQL
 
-## AI
+### Database
+
+- PostgreSQL (Neon)
+
+### AI
 
 - OpenAI API
 
----
+### Deployment
 
-# Project Structure
-
-backend/
-- controllers
-- services
-- repositories
-- routes
-- middleware
-- prisma
-- prompts
-
-frontend/
-- components
-- pages
-- services
+- Vercel
+- Render
 
 ---
 
-# Installation
+## Folder Structure
 
-## Clone Repository
-
-```bash
-git clone <repository-url>
-cd spur-ai-chat
+```
+spur-ai-chat
+│
+├── frontend/
+├── backend/
+└── README.md
 ```
 
-## Backend
+---
+
+## Local Setup
+
+### Backend
 
 ```bash
 cd backend
 npm install
-```
-
-Create a `.env` file.
-
-```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/spur_ai_chat
-PORT=3000
-OPENAI_API_KEY=your_api_key
-```
-
-Run migrations
-
-```bash
-npx prisma migrate dev
-```
-
-Start server
-
-```bash
+npx prisma migrate deploy
 npm run dev
 ```
 
----
-
-## Frontend
+### Frontend
 
 ```bash
 cd frontend
@@ -105,112 +77,54 @@ npm run dev
 
 ---
 
-# API Endpoints
-
-## Health Check
-
-GET
+## Environment Variables
 
 ```
-/health
+DATABASE_URL=
+OPENAI_API_KEY=
+PORT=
 ```
 
 ---
 
-## Send Message
+## API Endpoints
 
-POST
-
-```
-/api/chat/message
-```
-
-Body
-
-```json
-{
-    "sessionId":"test-session",
-    "message":"Hello"
-}
-```
-
----
-
-## Conversation History
-
-GET
+### Health
 
 ```
-/api/chat/:sessionId
+GET /health
+```
+
+### Send Message
+
+```
+POST /api/chat/message
+```
+
+### Chat History
+
+```
+GET /api/chat/:sessionId
 ```
 
 ---
 
-# Architecture
+## Live Demo
 
-React
+Frontend
 
-↓
+```
+https://spur-ai-chat-eight.vercel.app
+```
 
-Express
+Backend
 
-↓
-
-Controller
-
-↓
-
-Service
-
-↓
-
-Repository
-
-↓
-
-Prisma
-
-↓
-
-PostgreSQL
-
-↓
-
-OpenAI
+```
+https://spur-ai-chat-backend-nsin.onrender.com
+```
 
 ---
 
-# Design Decisions
+## Author
 
-- Repository Pattern
-- Service Layer
-- Prisma ORM
-- PostgreSQL for persistence
-- Session-based conversation management
-- Zod request validation
-
----
-
-# Error Handling
-
-- Empty message validation
-- Maximum message length validation
-- Missing API key handling
-- OpenAI API failure handling
-- Database error handling
-
----
-
-# Future Improvements
-
-- Streaming AI responses
-- Authentication
-- Conversation management
-- Markdown rendering
-- Unit and integration testing
-
----
-
-# Author
-
-Pratyus Pradhan
+Pratyush
