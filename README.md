@@ -1,4 +1,4 @@
-# Spur AI Chat Assistant
+# AI Chat Assistant
 
 A full-stack AI-powered chat application built using React, Express, TypeScript, Prisma, PostgreSQL (Neon), and OpenAI.
 
